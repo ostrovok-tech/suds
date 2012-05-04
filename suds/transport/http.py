@@ -69,7 +69,7 @@ class HttpTransport(Transport):
         msg = request.message
         headers = request.headers
         try:
-            u2request = u2.Request(url, msg, headers)
+            u2request = u2.Request(str(url), msg, headers)
             self.addcookies(u2request)
             self.proxy = self.options.proxy
             request.headers.update(u2request.headers)
